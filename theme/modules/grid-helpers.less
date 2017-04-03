@@ -1,0 +1,12 @@
+.showGrid(@maxWidth: 960px) {
+  background: url(../../htdocs/img/grid960x12x60x20.png) repeat-y fixed center center ;
+  background-size: 100% auto;
+  margin-left: auto ;
+  margin-right: auto ;
+  max-width: @maxWidth ;
+
+  @media (min-width: @maxWidth) {
+    background-size: @maxWidth auto;
+  }
+}
+

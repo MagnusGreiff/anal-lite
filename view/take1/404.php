@@ -13,6 +13,7 @@ foreach ($app->router->getInternal() as $route) {
 $intRoutes .= "</ul>";
 
 $body = <<<EOD
+<div class="Error">
 <h1>404 Not Found</h1>
 <p>The route '$currentRoute' could not be found!</p>
 <h2>Routes loaded</h2>
@@ -20,8 +21,8 @@ $body = <<<EOD
 $routes
 <p>The following internal routes are loaded:</p>
 $intRoutes
+</div>
 EOD;
 
-?>
 
-<?= $body ?>
+echo $body;

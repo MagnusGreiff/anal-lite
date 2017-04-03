@@ -1,0 +1,78 @@
+/** 
+* Anax Flat theme.
+*/
+@import url(modules.less);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
+@navColor: #1e5799;
+
+body {
+  .column(12);
+}
+
+.navbar {
+  .column(12);
+  background-color: @navColor;
+  ul {
+    .column(12);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+    .column(2.4);
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  .column(12);
+}
+
+.text_content {
+  .column(6);
+}
+
+
+.image {
+  .column(6);
+}
+
+footer {
+  .column(12);
+  p {
+    text-align: center;
+  }
+}
+
+pre {
+  .column(12);
+}
+
+.Error {
+  .column(12);
+}
+
+.report {
+  .column(12);
+}
+
+@media screen and (max-width: 1050px) {
+  .text_content {
+    .column(12);
+  }
+
+  .image {
+    .column(12);
+  }
+}
+

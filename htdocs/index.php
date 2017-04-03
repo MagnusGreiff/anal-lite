@@ -34,4 +34,3 @@ $app->url->setDefaultsFromConfiguration();
 require ANAX_INSTALL_PATH . "/config/route.php";
 
 $app->router->handle($app->request->getRoute());
-

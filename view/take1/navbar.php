@@ -1,8 +1,40 @@
 <?php
-$urlHome = $app->url->create("");
-$urlAbout = $app->url->create("about");
-?>
-<navbar>
-    <a href="<?= $urlHome ?>">Home</a>
-    <a href="<?= $urlAbout ?>">About</a>
-</navbar>
+
+$navbar = [
+    "config" => [
+        "navbar-class" => "navbar"
+    ],
+    "items" => [
+        "hem" => [
+            "text" => "Hem",
+            "route" => "",
+        ],
+        "om" => [
+            "text" => "Om",
+            "route" => "about",
+        ],
+        "status" => [
+            "text" => "Status",
+            "route" => "status",
+        ],
+        "404" => [
+            "text" => "404",
+            "route" => "MagnusGreiffFTW",
+        ],
+        "report" => [
+            "text" => "Report",
+            "route" => "report"
+        ]
+    ]
+];
+
+$nav = "<navbar class='" . $navbar["config"]["navbar-class"] . "'>";
+$nav .= "<ul>";
+foreach ($navbar["items"] as $item) {
+    $createUrl = $app->url->create($item["route"]);
+    $nav .= '<li><a href="' . $createUrl . ' ">' . $item["text"] . '</a></li>';
+}
+$nav .= "</ul>";
+$nav .= "</navbar>";
+
+echo $nav;
