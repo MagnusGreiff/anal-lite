@@ -14,6 +14,11 @@ $app->url = new \Anax\Url\Url();
 $app->router =new \Anax\Route\RouterInjectable();
 $app->view = new \Anax\View\ViewContainer();
 $app->response = new \Anax\Response\Response();
+$app->session = new \Radchasay\Session\Session();
+$app->navbar = new \Radchasay\Navbar\Navbar();
+
+$app->navbar->configure("navbar.php");
+$app->navbar->setApp($app);
 
 
 $app->request->init();

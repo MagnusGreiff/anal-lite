@@ -1,6 +1,6 @@
 <?php
 
-$navbar = [
+return [
     "config" => [
         "navbar-class" => "navbar"
     ],
@@ -31,14 +31,3 @@ $navbar = [
         ]
     ]
 ];
-
-$nav = "<navbar class='" . $navbar["config"]["navbar-class"] . "'>";
-$nav .= "<ul>";
-foreach ($navbar["items"] as $item) {
-    $createUrl = $app->url->create($item["route"]);
-    $nav .= '<li><a href="' . $createUrl . ' ">' . $item["text"] . '</a></li>';
-}
-$nav .= "</ul>";
-$nav .= "</navbar>";
-
-echo $nav;
