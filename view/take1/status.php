@@ -1,5 +1,5 @@
 <?php
-$data = [
+/*$data = [
     "Server" => php_uname(),
     "PHP version" => phpversion(),
     "Includes files" => count(get_included_files()),
@@ -7,11 +7,11 @@ $data = [
     "Execution time" => microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"],
 ];
 
-?>
+*/?><!--
 
 
 <pre>
     <?php
-        print_r($data);
-    ?>
-</pre>
+/*        print_r($data);
+    */?>
+</pre>-->

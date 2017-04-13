@@ -16,6 +16,7 @@ $app->view = new \Anax\View\ViewContainer();
 $app->response = new \Anax\Response\Response();
 $app->session = new \Radchasay\Session\Session();
 $app->navbar = new \Radchasay\Navbar\Navbar();
+/*$app->dice = new \Radchasay\DiceGame\Game();*/
 
 $app->navbar->configure("navbar.php");
 $app->navbar->setApp($app);

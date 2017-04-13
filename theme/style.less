@@ -8,6 +8,7 @@
 
 body {
   .column(12);
+  overflow-y: scroll;
 }
 
 .navbar {
@@ -22,7 +23,7 @@ body {
   }
   li {
     float: left;
-    .column(2);
+    .column(1.7);
   }
 
   li a {
@@ -35,6 +36,38 @@ body {
 }
 
 h1 {
+  .column(12);
+}
+
+#dice {
+  text-align: center;
+}
+
+#currentPlayer {
+  .push(3);
+  .column(9);
+  text-align: center;
+}
+
+.info {
+  .column(6);
+  text-align: center;
+}
+
+#winner {
+  text-align: center;
+}
+
+.wutToDo {
+  .column(6);
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.form {
   .column(12);
 }
 
