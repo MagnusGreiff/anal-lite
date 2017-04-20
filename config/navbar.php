@@ -32,6 +32,17 @@ return [
         "diceGame" => [
             "text" => "Dice Game",
             "route" => "diceGame"
+        ],
+        "login" => [
+            "text" => "Login",
+            "route" => "login"
+        ],
+
+        "welcome" => [
+            "text" => "Member Area",
+            "route" => "welcome"
         ]
+
+
     ]
 ];

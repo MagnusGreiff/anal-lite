@@ -15,15 +15,27 @@ $app->router =new \Anax\Route\RouterInjectable();
 $app->view = new \Anax\View\ViewContainer();
 $app->response = new \Anax\Response\Response();
 $app->session = new \Radchasay\Session\Session();
+$app->cookie = new \Radchasay\Cookie\Cookie();
 $app->navbar = new \Radchasay\Navbar\Navbar();
 /*$app->dice = new \Radchasay\DiceGame\Game();*/
+$app->db = new \Radchasay\Database\Connect();
+$app->dropdown = new \Radchasay\Dropdown\Dropdown();
+$app->user = new \Radchasay\User\User();
 
 $app->navbar->configure("navbar.php");
 $app->navbar->setApp($app);
 
+$app->db->configure("database.php");
+$app->db->setApp($app);
+$app->db->connect();
+
 
 $app->request->init();
 $app->view->setApp($app);
+
+$app->dropdown->setApp($app);
+$app->user->setApp($app);
+
 
 $app->url->setSiteUrl($app->request->getSiteUrl());
 $app->url->setBaseUrl($app->request->getBaseUrl());

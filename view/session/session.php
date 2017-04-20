@@ -12,7 +12,7 @@ $status = $app->url->create("session/status");
 ?>
 
 
-<div class="session">
+<div class="sessionDiv">
     <h1>Value: <?= $app->session->get("value") ?></h1>
     <ul>
         <li class="button" id="increment"><a href="<?= $increment ?>">Increment</a></li>

@@ -1,6 +1,16 @@
+<?php
+$req_uri = $_SERVER['REQUEST_URI'];
 
+if (strpos($req_uri, "?") !== false) {
+    $path = substr($req_uri, 0, strrpos($req_uri, '?'));
+    $path = basename($path);
+} else {
+    $path = basename($req_uri);
+}
+
+?>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="<?= $path ?>">
 <meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
