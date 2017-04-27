@@ -1,7 +1,7 @@
 <?php
 echo "<h1 id='cpwdh1'>Change Password (Users)</h1>";
-$adminPassword = $app->url->create("adminPassword");
-$adminTools = $app->url->create("admin");
+$adminPassword = $app->url->create("admin/adminPassword");
+$adminTools = $app->url->create("admin/admin");
 $status = "Change password";
 echo $app->dropdown->createDropdownList();
 

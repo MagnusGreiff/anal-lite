@@ -14,10 +14,15 @@ class Connect implements \Anax\Common\ConfigureInterface, \Anax\Common\AppInject
             $db = new \PDO($this->config[0], $this->config[1], $this->config[2]);
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->db = $db;
+            $this->execute('set character_set_client=utf8');
+            $this->execute('set character_set_connection=utf8');
+            $this->execute('set character_set_results=utf8');
+            $this->execute('set character_set_server=utf8');
         } catch (\PDOException $e) {
             echo "Failed to connect to the database using DSN:<br>$this->config[dsn]<br>";
         }
     }
+
 
     public function executeFetchAll($sql, $param = [])
     {
@@ -92,5 +97,11 @@ class Connect implements \Anax\Common\ConfigureInterface, \Anax\Common\AppInject
                 ? "WARNING your params array has keys, should only have values."
                 : null)
         );
+    }
+
+
+    public function lastInsertId()
+    {
+        return $this->db->lastInsertId();
     }
 }

@@ -41,6 +41,16 @@ return [
         "welcome" => [
             "text" => "Member Area",
             "route" => "welcome"
+        ],
+
+        "content" => [
+            "text" => "Content",
+            "route" => "content/content"
+        ],
+
+        "block" => [
+            "text" => "Block Testing",
+            "route" => "block/block"
         ]
 
 

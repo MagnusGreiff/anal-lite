@@ -1,5 +1,5 @@
 <?php
-$adminTools = $app->url->create("admin");
+$adminTools = $app->url->create("admin/admin");
 ?>
 
     <!doctype html>
@@ -63,8 +63,8 @@ if ($app->request->getPost("submitCreateForm")) {
     $type = $app->request->getPost("selectType", null);
     $email = $app->request->getPost("email", null);
 
-    $adminTools = $app->url->create("admin");
-    $create = $app->url->create("adminCreate");
+    $adminTools = $app->url->create("admin/admin");
+    $create = $app->url->create("admin/adminCreate");
 
     $emailParts = explode("@", $email);
     $emailPart1 = $emailParts[0];

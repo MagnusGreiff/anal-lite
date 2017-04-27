@@ -21,6 +21,9 @@ $app->navbar = new \Radchasay\Navbar\Navbar();
 $app->db = new \Radchasay\Database\Connect();
 $app->dropdown = new \Radchasay\Dropdown\Dropdown();
 $app->user = new \Radchasay\User\User();
+$app->content = new \Radchasay\Content\Content();
+$app->filter = new \Mos\TextFilter\CTextFilter();
+$app->block = new \Radchasay\Block\Block();
 
 $app->navbar->configure("navbar.php");
 $app->navbar->setApp($app);
@@ -28,6 +31,8 @@ $app->navbar->setApp($app);
 $app->db->configure("database.php");
 $app->db->setApp($app);
 $app->db->connect();
+
+$app->content->setApp($app);
 
 
 $app->request->init();

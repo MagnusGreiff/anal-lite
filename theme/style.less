@@ -23,7 +23,7 @@ body {
   }
   li {
     float: left;
-    .column(1.33333);
+    .column(1.090909091);
   }
 
   li a {
@@ -193,12 +193,11 @@ pre {
     .column(12);
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
   }
   li {
     float: left;
-    .column(1.897);
+    .column(3);
     height: 100px !important;
     margin: 0 0 0 0 !important;
   }
@@ -231,6 +230,12 @@ pre {
   }
   #adminPass {
     background-color: lightseagreen;
+  }
+  #adminCreatePost {
+    background-color: #40a070;
+  }
+  #adminPosts {
+    background-color: #ff6eb1;
   }
 
 }
@@ -330,7 +335,6 @@ pre {
   }
 }
 
-
 .adminEdit {
   .dropdownList {
     width: 400px;
@@ -345,9 +349,9 @@ pre {
   }
 
   #ae {
-      width: 200px;
-      margin: 10px auto 10px auto;
-      text-align: center;
+    width: 200px;
+    margin: 10px auto 10px auto;
+    text-align: center;
   }
 }
 
@@ -471,4 +475,208 @@ pre {
     }
   }*/
 
+}
+
+.content {
+  h1 {
+    border-bottom: 1px double #ccc;
+  }
+
+  main {
+    min-height: 10em;
+  }
+
+  table {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+  }
+
+  tr.first {
+    background-color: #ddd;
+  }
+
+  tr:hover {
+    background-color: #eee;
+  }
+
+  th {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  img.thumb {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  footer {
+    border-top: 1px solid #ccc;
+  }
+
+  footer a {
+    text-decoration: none;
+  }
+
+  a.icons {
+    color: inherit;
+  }
+
+  a:hover.icons {
+    opacity: 0.7;
+  }
+
+  input[type=text],
+  input[type=datetime],
+  textarea {
+    width: 400px;
+  }
+
+  textarea {
+    height: 300px;
+  }
+
+  label {
+    font-size: small;
+  }
+
+  input,
+  textarea,
+  legend,
+  button {
+    font-size: large;
+  }
+
+  article {
+    margin-bottom: 24px;
+  }
+
+}
+
+.createPost {
+  form {
+    width: 400px;
+    margin: 80px auto 0 auto;
+  }
+}
+
+.editPost {
+  form {
+    width: 400px;
+    margin: 80px auto 0 auto;
+  }
+  textarea {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+.posts, .pages {
+  h1 {
+    border-bottom: 1px double #ccc;
+  }
+
+  main {
+    min-height: 10em;
+  }
+
+  table {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+  }
+
+  tr.first {
+    background-color: #ddd;
+  }
+
+  tr:hover {
+    background-color: #eee;
+  }
+
+  th {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  img.thumb {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  footer {
+    border-top: 1px solid #ccc;
+  }
+
+  footer a {
+    text-decoration: none;
+  }
+
+  a.icons {
+    color: inherit;
+  }
+
+  a:hover.icons {
+    opacity: 0.7;
+  }
+
+  input[type=text],
+  input[type=datetime],
+  textarea {
+    width: 400px;
+  }
+
+  textarea {
+    height: 300px;
+  }
+
+  label {
+    font-size: small;
+  }
+
+  input,
+  textarea,
+  legend,
+  button {
+    font-size: large;
+  }
+
+  article {
+    margin-bottom: 24px;
+  }
+
+  table {
+    .column(12);
+  }
+
+}
+
+.deletePost {
+  form {
+    width: 400px;
+    margin: 80px auto 0 auto;
+  }
+}
+
+.content .contentDiv {
+  .column(12);
+  a {
+    display: inherit;
+  }
+}
+
+.page article, .blog article {
+  width: 60%;
+  margin: auto;
+}
+
+.blogs section {
+  width: 80%;
+  margin: auto;
+  max-height: 200px;
+  overflow: hidden;
 }

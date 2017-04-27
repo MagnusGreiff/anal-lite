@@ -1,11 +1,14 @@
 <?php
 
 $welcome = $app->url->create("welcome");
-$search = $app->url->create("search");
-$adminCreate = $app->url->create("adminCreate");
-$adminEdit = $app->url->create("adminEdit");
-$showAll = $app->url->create("showAll");
-$adminPass = $app->url->create("adminPassword");
+$search = $app->url->create("admin/search");
+$adminCreate = $app->url->create("admin/adminCreate");
+$adminEdit = $app->url->create("admin/adminEdit");
+$showAll = $app->url->create("admin/showAll");
+$adminPass = $app->url->create("admin/adminPassword");
+
+$adminCreatePost = $app->url->create("admin/createPost");
+$adminShowPost = $app->url->create("admin/posts");
 
 ?>
 
@@ -18,5 +21,7 @@ $adminPass = $app->url->create("adminPassword");
         <li id="adminDelete"><p><a href=' <?= $showAll ?>'>Delete user</a></p></li>
         <li id="showAll"><p><a href=' <?= $showAll ?>'>Show all users</a></p></li>
         <li id="adminPass"><p><a href=' <?= $adminPass ?>'>Edit password (Users)</a></p></li>
+        <li id="adminPosts"><p><a href=' <?= $adminShowPost ?>'>Show All Posts</a></p></li>
+        <li id="adminCreatePost"><p><a href=' <?= $adminCreatePost ?>'>Create new post</a></p></li>
     </ul>
 </div>

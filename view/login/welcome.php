@@ -5,7 +5,7 @@ $logout = $app->url->create("logout");
 $login = $app->url->create("login");
 $change_pwd = $app->url->create("changepwd");
 $updateProfile = $app->url->create("updateProfile");
-$admin = $app->url->create("admin");
+$admin = $app->url->create("admin/admin");
 
 if (!$session->has("name")) {
     $app->response->redirect($login);

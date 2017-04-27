@@ -1,6 +1,6 @@
 <?php
 
-$adminEdit = $app->url->create("adminEdit");
+$adminEdit = $app->url->create("admin/adminEdit");
 echo $app->dropdown->createDropdownList();
 
 $getUser = $app->request->getPost("userSelect");
