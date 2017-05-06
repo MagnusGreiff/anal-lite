@@ -59,9 +59,9 @@ class User implements \Anax\Common\AppInjectableInterface
         echo $table;
     }
 
-    public function showAllUsers($hits, $page, $orderBy, $order)
+    public function showAllUsers($res)
     {
-        $defaultRoute = "?route=show-all-paginate&";
+     /*   $defaultRoute = "?route=show-all-paginate&";
         $count = "SELECT COUNT(name) AS max FROM setup_user;";
         $resCount = $this->app->db->executeFetchAll($count);
         if (!(is_numeric($hits) && $hits > 0 && $hits <= 8)) {
@@ -78,7 +78,7 @@ class User implements \Anax\Common\AppInjectableInterface
 
         $sql = "SELECT name, age, email, type FROM setup_user ORDER BY $orderBy $order LIMIT $hits OFFSET $offset";
         /*}*/
-        $resSql = $this->app->db->executeFetchAll($sql);
+      /*  $resSql = $this->app->db->executeFetchAll($sql);
 
         $ipp = "<p>";
         $mqs2 = $this->mergeQueryString(["hits" => 2], $defaultRoute);
@@ -91,12 +91,12 @@ class User implements \Anax\Common\AppInjectableInterface
         echo $ipp;
 
         $table = "<table>";
-        $table .= "<tr><th>Name" . $this->orderby("name", $defaultRoute) . "</th>";
-        $table .= "<th>Age" . $this->orderby("age", $defaultRoute) . "</th>";
-        $table .= "<th>Type" . $this->orderby("type", $defaultRoute) . "</th>";
-        $table .= "<th>Email" . $this->orderby("email", $defaultRoute) . "</th>";
+        $table .= "<tr><th>Name" . $this->orderby("name") . "</th>";
+        $table .= "<th>Age" . $this->orderby("age") . "</th>";
+        $table .= "<th>Type" . $this->orderby("type") . "</th>";
+        $table .= "<th>Email" . $this->orderby("email") . "</th>";
         $table .= "</tr>";
-        foreach ($resSql as $item) {
+        foreach ($res as $item) {
             $table .= "<tr>";
             $table .= "<td>" . $item["name"] . "</td>";
             $table .= "<td>" . $item["age"] . "</td>";
@@ -114,7 +114,26 @@ class User implements \Anax\Common\AppInjectableInterface
             $pages .= "<a href='$test'> $i </a>";
         }
         $pages .= "</p>";
-        echo $pages;
+        echo $pages;*/
+        /**/
+        /*}*/
+        $table = "<table>";
+        $table .= "<tr><th>Name" . $this->orderby("name") . "</th>";
+        $table .= "<th>Age" . $this->orderby("age") . "</th>";
+        $table .= "<th>Type" . $this->orderby("type") . "</th>";
+        $table .= "<th>Email" . $this->orderby("email") . "</th>";
+        $table .= "</tr>";
+        foreach ($res as $item) {
+            $table .= "<tr>";
+            $table .= "<td>" . $item["name"] . "</td>";
+            $table .= "<td>" . $item["age"] . "</td>";
+            $table .= "<td>" . $item["type"] . "</td>";
+            $table .= "<td>" . $item["email"] . "</td>";
+            $table .= "</tr>";
+        }
+        $table .= "</table>";
+    
+        echo $table;
     }
 
     public function deleteUser($email)
@@ -135,14 +154,18 @@ class User implements \Anax\Common\AppInjectableInterface
         // Build and return the modified querystring as url
         return $prepend . http_build_query($query);
     }
-
-
-    public function orderby($column, $route)
+    
+    public function orderby($column)
     {
+        if (strpos($this->app->request->getRoute(), 'search') !== false) {
+            return;
+        }
+        $asc = $this->mergeQueryString(["orderby" => $column, "order" => "asc"]);
+        $desc = $this->mergeQueryString(["orderby" => $column, "order" => "desc"]);
         return <<<EOD
-<span class='orderby'>
-<a href="{$route}orderby={$column}&order=asc">&darr;</a>
-<a href="{$route}orderby={$column}&order=desc">&uarr;</a>
+<span class="orderby">
+<a href="$asc">&darr;</a>
+<a href="$desc">&uarr;</a>
 </span>
 EOD;
     }

@@ -51,6 +51,11 @@ return [
         "block" => [
             "text" => "Block Testing",
             "route" => "block/block"
+        ],
+
+        "webbshop" => [
+            "text" => "Webbshop",
+            "route" => "shop/shopShow"
         ]
 
 

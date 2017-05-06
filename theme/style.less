@@ -23,7 +23,7 @@ body {
   }
   li {
     float: left;
-    .column(1.090909091);
+    .column(0.99);
   }
 
   li a {
@@ -138,9 +138,9 @@ pre {
   }
 }
 
-.selected {
+/*.selected {
   background-color: lightseagreen;
-}
+}*/
 
 @media screen and (max-width: 1050px) {
   .text_content {
@@ -573,7 +573,7 @@ pre {
   }
 }
 
-.posts, .pages {
+.posts, .pages, .shopShow {
   h1 {
     border-bottom: 1px double #ccc;
   }
@@ -663,7 +663,7 @@ pre {
 }
 
 .content .contentDiv {
-  .column(12);
+  .column(12);/**/
   a {
     display: inherit;
   }
@@ -679,4 +679,16 @@ pre {
   margin: auto;
   max-height: 200px;
   overflow: hidden;
+}
+
+.shopShow div {
+  .column(12);
+}
+
+.shopUpdate form {
+  .column(12);
+}
+
+.shopCreate form {
+  .column(12);
 }
