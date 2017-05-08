@@ -53,6 +53,7 @@ $app->view->configure("view.php");
 $app->url->setDefaultsFromConfiguration();
 
 
+
 //Load the routes
 require ANAX_INSTALL_PATH . "/config/route.php";
 

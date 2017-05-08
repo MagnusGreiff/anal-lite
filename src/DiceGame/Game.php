@@ -1,4 +1,5 @@
 <?php
+
 namespace Radchasay\DiceGame;
 
 class Game
@@ -30,9 +31,6 @@ class Game
         $this->currentPlayer = 0;
     }
 
-    public function checkWinner()
-    {
-    }
 
     public function switchPlayer()
     {
@@ -65,10 +63,10 @@ class Game
         return $this->currentScore;
     }
 
-    public function game($state)
+    public function game($state, $min = 1, $max = 6)
     {
         if ($state == "roll") {
-            $rollNumber = $this->dice->roll();
+            $rollNumber = $this->dice->roll($min, $max);
             if ($rollNumber == 1) {
                 $this->switchPlayer();
             } else {

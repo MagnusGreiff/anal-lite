@@ -35,43 +35,45 @@ $res = $app->db->executeFetchAll("SELECT * FROM VProduct ORDER BY $orderBy $orde
         <a href="<?= $app->user->mergeQueryString(["hits" => 4]) ?>">4</a> |
         <a href="<?= $app->user->mergeQueryString(["hits" => 8]) ?>">8</a>
     </p>
-<table>
-    <tr class="first">
-        <th>Id <?= $app->user->orderby("id") ?></th>
-        <th>Description<?= $app->user->orderby("description") ?></th>
-        <th>Price<?= $app->user->orderby("price") ?></th>
-        <th>Status<?= $app->user->orderby("Status") ?></th>
-        <th>Image<?= $app->user->orderby("image") ?></th>
-        <th>Category<?= $app->user->orderby("category") ?></th>
-        <th>Actions</th>
-    </tr>
-    <?php foreach ($res as $row) :
-    ?>
-    <tr>
-        <td><?= $row["id"] ?></td>
-        <td><?= $row["Description"] ?></td>
-        <td><?= $row["Price"] ?></td>
-        <td><?= $row["Status"] ?></td>
-        <td><?= $row["Image"] ?></td>
-        <td><?= $row["Category"] ?></td>
-        <td>
-           <a class="icons" href="<?= $edit ?>?route=edit&amp;id=<?= $row["id"] ?>" title="Edit this content">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </a>
-            <a class="icons" href="<?= $delete ?>?route=delete&amp;id=<?= $row["id"] ?>&amp;hits=<?= $hits ?>&amp;page=<?= $page ?>" title="Edit this content">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </a>
-        </td>
-    </tr>
-<?php endforeach; ?>
-</table>
+    <table>
+        <tr class="first">
+            <th>Id <?= $app->user->orderby("id") ?></th>
+            <th>Description<?= $app->user->orderby("description") ?></th>
+            <th>Price<?= $app->user->orderby("price") ?></th>
+            <th>Status<?= $app->user->orderby("Status") ?></th>
+            <th>Image<?= $app->user->orderby("image") ?></th>
+            <th>Category<?= $app->user->orderby("category") ?></th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($res as $row) :
+            ?>
+            <tr>
+                <td><?= $row["id"] ?></td>
+                <td><?= $row["Description"] ?></td>
+                <td><?= $row["Price"] ?></td>
+                <td><?= $row["Status"] ?></td>
+                <td><?= $row["Image"] ?></td>
+                <td><?= $row["Category"] ?></td>
+                <td>
+                    <a class="icons" href="<?= $edit ?>?route=edit&amp;id=<?= $row["id"] ?>" title="Edit this content">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                    <a class="icons"
+                       href="<?= $delete ?>?route=delete&amp;id=<?= $row["id"] ?>&amp;hits=<?= $hits ?>&amp;page=<?= $page ?>"
+                       title="Edit this content">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 
-<p>
-    Pages:
-    <?php for ($i = 1; $i <= $max; $i++) : ?>
-        <a href="<?= $app->user->mergeQueryString(["page" => $i]) ?>"><?= $i ?></a>
-    <?php endfor; ?>
-</p>
+    <p>
+        Pages:
+        <?php for ($i = 1; $i <= $max; $i++) : ?>
+            <a href="<?= $app->user->mergeQueryString(["page" => $i]) ?>"><?= $i ?></a>
+        <?php endfor; ?>
+    </p>
 </div>
 
 <div>
@@ -80,5 +82,3 @@ $res = $app->db->executeFetchAll("SELECT * FROM VProduct ORDER BY $orderBy $orde
         <li><a href="<?= $create ?>">Create new product</a></li>
     </ul>
 </div>
-
-<!-- #TODO: Add images -->

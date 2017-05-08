@@ -175,9 +175,9 @@ check-tools-php:
 
 # target: phpunit            - Run unit tests for PHP.
 .PHONY: phpunit
-phpunit: prepare
+phpunit:
 	@$(call HELPTEXT,$@)
-	[ ! -d "test" ] || $(PHPUNIT) --configuration .phpunit.xml
+	[ ! -d "test" ] || phpunit --configuration .phpunit.xml
 
 
 

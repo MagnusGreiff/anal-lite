@@ -31,13 +31,15 @@ SET time_zone = "+00:00";
 --
 -- Tabellstruktur `setup-user`
 --
-DROP TABLE IF EXISTS `setup-user`;
-CREATE TABLE `setup-user` (
+DROP TABLE IF EXISTS `setup_user`;
+CREATE TABLE `setup_user` (
   `name` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `age` int(3) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+
+  KEY `index_age` (`age`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -47,7 +49,7 @@ CREATE TABLE `setup-user` (
 --
 -- Index för tabell `setup-user`
 --
-ALTER TABLE `setup-user`
+ALTER TABLE `setup_user`
   ADD PRIMARY KEY (`email`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

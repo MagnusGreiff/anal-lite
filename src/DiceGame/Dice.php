@@ -7,13 +7,13 @@ class Dice
 
     public $rolls = [];
 
-    public function roll()
+
+    public function roll($min = 1, $max = 6)
     {
-        $roll = rand(1, 6);
+        $roll = rand($min, $max);
         $this->rolls[] = $roll;
         return $roll;
     }
-
 
 
     /*    protected $rolls = [];
